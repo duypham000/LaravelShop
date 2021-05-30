@@ -1,7 +1,9 @@
 @extends('layouts.admin')
 
+{{--kiểu 1: chỉ text, không cần phải endsection--}}
 @section('title', 'Trang Chủ')
 
+{{--kiểu 2: html, phải có endsection--}}
 @section('content')
 
     <div class="content-wrapper">
@@ -27,7 +29,7 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="col-md-12">
-                    <a href="#" class="btn btn-success m-2">Add</a>
+                    <a href="{{ route('categories.create') }}" class="btn btn-success m-2">Add</a>
                 </div>
                 <div class="col-md-12">
                     <table class="table">

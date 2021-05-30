@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('home');
 });
+
+Route::prefix('categories')->group(function () {
+    Route::get('/create', [
+//        link router
+        'as' => 'categories.create',
+//        đường dẫn tới controller, trong controller CategoryController gọi hàm create()
+//        nếu điền CategoryController@create mà không hiện thì mới khai báo như dưới
+        'uses' => 'App\Http\Controllers\CategoryController@create'
+    ]);
+});
