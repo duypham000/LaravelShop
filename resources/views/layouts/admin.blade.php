@@ -6,7 +6,7 @@
     <title>
         @yield('title')
     </title>
-    @include(('partials.includeStyle'))
+    @include('partials.includeStyle')
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

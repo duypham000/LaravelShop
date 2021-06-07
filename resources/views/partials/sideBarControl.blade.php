@@ -1,4 +1,3 @@
-<!-- Control sidebar content goes here -->
 
 <aside class="control-sidebar control-sidebar-dark">
 <div class="p-3">

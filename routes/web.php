@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,11 +19,28 @@ Route::get('/', function () {
 });
 
 Route::prefix('categories')->group(function () {
+    Route::get('/', [
+        'as' => 'categories',
+        'uses' => 'CategoryController@index'
+    ]);
     Route::get('/create', [
-//        link router
         'as' => 'categories.create',
-//        đường dẫn tới controller, trong controller CategoryController gọi hàm create()
-//        nếu điền CategoryController@create mà không hiện thì mới khai báo như dưới
-        'uses' => 'App\Http\Controllers\CategoryController@create'
+        'uses' => 'CategoryController@create'
+    ]);
+    Route::post('/store', [
+        'as' => 'categories.store',
+        'uses' => 'CategoryController@store'
+    ]);
+    Route::post('/update/{id}', [
+        'as' => 'categories.update',
+        'uses' => 'CategoryController@update'
+    ]);
+    Route::get('/edit/{id}', [
+        'as' => 'categories.edit',
+        'uses' => 'CategoryController@edit'
+    ]);
+    Route::get('/delete/{id}', [
+        'as' => 'categories.delete',
+        'uses' => 'CategoryController@delete'
     ]);
 });
