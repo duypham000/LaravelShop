@@ -5,38 +5,38 @@
 @section('content')
 
     <div class="content-wrapper">
-    @include('partials.contentHeader', [
-        'parents'=> [
-          ['url'=>'/', 'name'=> 'Home']
-          ],
-          'currentPage' => 'Category', 'title'=> 'Danh mục sản phẩm'
-    ])
+        @include('partials.contentHeader', [
+            'parents'=> [
+              ['url'=>'/', 'name'=> 'Home']
+              ],
+              'currentPage' => 'Menu', 'title'=> 'Danh sách Menu'
+        ])
 
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <a href="{{ route('categories.create') }}" class="btn btn-success m-2">Add</a>
+                        <a href="{{ route('menus.create') }}" class="btn btn-success m-2">Add</a>
                     </div>
                     <div class="col-md-12">
                         <table class="table">
                             <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Tên danh mục</th>
-                                <th scope="col">ID thẻ cha</th>
+                                <th scope="col">Tên menu</th>
+                                <th scope="col">ID cha</th>
                                 <th scope="col">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($data as $category)
+                            @foreach($data as $menu)
                                 <tr>
-                                    <th scope="row">{{ $category->id }}</th>
-                                    <td>{{ $category->name }}</td>
-                                    <td>{{ $category->parent_id }}</td>
+                                    <th scope="row">{{ $menu->id }}</th>
+                                    <td>{{ $menu->name }}</td>
+                                    <td>{{ $menu->parent_id }}</td>
                                     <td>
-                                        <a href="{{ route('categories.edit', ['id'=> $category->id]) }}" class="btn btn--success">Edit</a>
-                                        <a href="{{ route('categories.delete', ['id'=> $category->id]) }}" class="btn btn-danger">Delete</a>
+                                        <a href="{{ route('menus.edit', ['id'=> $menu->id]) }}" class="btn btn--success">Edit</a>
+                                        <a href="{{ route('menus.delete', ['id'=> $menu->id]) }}" class="btn btn-danger">Delete</a>
                                     </td>
                                 </tr>
                             @endforeach

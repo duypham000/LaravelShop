@@ -2,8 +2,8 @@
     "private": true,
     "scripts": {
         "dev": "php artisan serve",
-        "create model": "php artisan make:model -m ",
-        "create controller": "php artisan make:controller ",
+        "create-model": "php artisan make:model -m ",
+        "create-controller": "php artisan make:controller ",
         "migrate": "php artisan migrate",
         "terminal": "\"C:\\Program Files\\Git\\bin\\sh.exe\" --login -i"
     },

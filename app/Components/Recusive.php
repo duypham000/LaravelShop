@@ -13,7 +13,7 @@ class Recusive
     }
 
 //  đệ quy time!
-    function categoryRecusive($currentParent, $id, $text = '-', $parent_id = 0 )
+    function categoryRecusive($currentParent, $id, $text = '', $parent_id = 0 )
     {
 
         foreach ($this->data as $value) {
@@ -23,6 +23,9 @@ class Recusive
                     $this->htmlSelect .= "<option selected value='".$value["id"]."'>".$text.$value['name']."</option>";
                 }else if ($id != $value['id']){
                     $this->htmlSelect .= "<option value='".$value["id"]."'>".$text.$value['name']."</option>";
+                }
+                else{
+                    $this->htmlSelect .= "<option disabled value='".$value["id"]."'>".$text.$value['name']."</option>";
                 }
                 $this->categoryRecusive($currentParent, $id, $text."--", $value['id']);
             }
